@@ -1,0 +1,36 @@
+extends layout
+
+block content
+	div.rss
+		h1= title
+		.block.channels.col-md-6
+			.info
+				.title Affordable channels:
+				.content
+					each channel in channels
+						.item
+							a(href="#" data-id="#{channel._id}" data-url="#{channel.link}" onclick="return false") #{channel.name}
+							.edit-block
+								a(href="#" class="edit-channel" data-id="#{channel._id}" data-toggle="modal" data-target="#modalEdit" onclick="return false")
+									span.glyphicon.glyphicon-pencil
+								a(href="#" class="remove-channel" data-id="#{channel._id}" onclick="return false")
+									span.glyphicon.glyphicon-remove
+
+					form#add-channel
+						h2 Create new channel
+						input(type="text" name="name" id="name" class="form-control" required="" placeholder="Channel's name")
+						input(type="url" name="link" id="link" class="form-control" required="" placeholder="Channel's url")
+						input(type="submit" value="Create channel" class="btn btn-primary btn-block")
+
+		.block.channel.col-md-6
+			.info
+				.content No active channels selected....
+
+		.block.message.col-md-6
+			.info
+				.content Here will be active message content...
+
+		.block.txt-stat.col-md-6
+			.info
+				.content Here will be message stat...
+				canvas#myChart

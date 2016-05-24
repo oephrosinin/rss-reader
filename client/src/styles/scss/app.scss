@@ -1,0 +1,84 @@
+.hidden {
+	display: none;
+}
+
+/* rss block styles */
+.rss {
+	margin: 0 auto;
+	width: 1200px;
+	max-width: 100%;
+
+	.block {
+		height: 380px;
+		padding: 10px;
+
+		.info {
+			height: 100%;
+			padding: 10px;
+			position: relative;
+			border: 1px dashed darkcyan;
+			overflow: scroll;
+		}
+
+		.item {
+			&.active {
+				background: rgba(173, 216, 230, 0.46);
+			}
+
+			.edit-block {
+				float: right;
+				width: 50px;
+				font-size: 12px;
+				text-align: right;
+
+				span {
+					padding: 0 3px;
+					opacity: .5;
+				}
+			}
+
+			&:hover {
+				background: rgba(179, 228, 230, 0.27);
+
+				.edit-block span{
+					opacity: 1;
+				}
+			}
+		}
+
+		&.channel .item {
+			padding: 10px 0;
+
+			.author {
+				font-size: 12px;
+				font-weight: bold;
+			}
+		}
+	}
+
+	.warn {
+		background: yellow;
+	}
+}
+
+form {
+	input {
+		margin: 5px 0;
+
+		&.error {
+			border: 1px solid red;
+			background: #dbaed4;
+		}
+
+		&[type=submit] {
+			margin: 0;
+		}
+	}
+
+	label.error {
+		color: palevioletred;
+	}
+}
+
+/*rss block styles */
+/********END********/

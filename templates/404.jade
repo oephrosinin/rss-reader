@@ -1,0 +1,14 @@
+doctype html
+html
+   head
+      meta(charset="utf8")
+      meta(name="viewport" content="width=device-width, initial-scale=1")
+      title= title
+      link(rel='stylesheet', href='/css/lib.css')
+      link(rel='stylesheet', href='/css/app.css')
+   body
+      block content
+         .rss.not-found
+            h1 Page not found
+            .text Page, you looking for does not exist.
+               a(href="/")  Home page
