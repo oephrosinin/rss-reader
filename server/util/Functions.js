@@ -47,17 +47,6 @@ var Functions = {
 
 
 	/**
-	 * Проверяем обьект ли это
-	 * @public
-	 * @param value
-	 * @return boolean
-	 */
-	isObject(value){
-		return typeof value == "object" && !("length" in value);
-	},
-
-
-	/**
 	 * Проверяем строка ли это
 	 * @public
 	 * @param value
@@ -85,21 +74,6 @@ var Functions = {
 	 */
 	cleanSpaces(value = "") {
 		return Validator.trim(Functions.cleanString(value));
-	},
-
-	
-	/**
-	 * Получаем регалярное выражение по ключу.
-	 * @public
-	 * @param value
-	 * @return regExp
-	 */
-	getRegExp(value){
-		let data = {
-			str: /^[а-яА-ЯёЁ\w\s\$\.\+\*\-\(\)\{}\?\|\\_&=,;:'"!@#]{1,100}$/i,
-			password: /^(?=.*).{3,50}$/
-		};
-		return data[value] || false;
 	},
 
 
