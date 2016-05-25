@@ -7,14 +7,15 @@ block content
 			.info
 				.title Affordable channels:
 				.content
-					each channel in channels
-						.item
-							a(href="#" data-id="#{channel._id}" data-url="#{channel.link}" onclick="return false") #{channel.name}
-							.edit-block
-								a(href="#" class="edit-channel" data-id="#{channel._id}" data-toggle="modal" data-target="#modalEdit" onclick="return false")
-									span.glyphicon.glyphicon-pencil
-								a(href="#" class="remove-channel" data-id="#{channel._id}" onclick="return false")
-									span.glyphicon.glyphicon-remove
+					.items
+						each channel in channels
+							.item
+								a(href="#" data-id="#{channel._id}" data-url="#{channel.link}" onclick="return false") #{channel.name}
+								.edit-block
+									a(href="#" class="edit-channel" data-id="#{channel._id}" data-toggle="modal" data-target="#modalEdit" onclick="return false")
+										span.glyphicon.glyphicon-pencil
+									a(href="#" class="remove-channel" data-id="#{channel._id}" onclick="return false")
+										span.glyphicon.glyphicon-remove
 
 					form#add-channel
 						h2 Create new channel

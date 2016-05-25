@@ -150,7 +150,7 @@ $( document ).ready(() => {
                 Functions.showMsg(message);
 
                 // Render created channel at the end of the list
-                $('.channels .item').last().after(
+                $('.channels .items').append(
 
                     `<div class="item">
                         <a href="#" data-id="${channel._id}" data-url="${channel.link}" onclick="return false">${channel.name}</a>

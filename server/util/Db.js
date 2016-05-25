@@ -5,12 +5,16 @@ const mongojs = require('mongojs');
 const Logger = require('./Logger');
 const MongoClient = require('mongodb').MongoClient;
 
-MongoClient.connect('mongodb://' + config.mongodb.host + '/' + config.mongodb.db, (error, Db) => {
+const DB_PATH = `mongodb://${config.mongodb.host}/${config.mongodb.db}`;
+
+// Пытаемся соединиться с MongoDB
+MongoClient.connect(DB_PATH, (error, db) => {
 	if(error){
 		console.log('[FAILED] Unable to establish connection to mongodb.');
 	}
 	else {
-		driver.db = mongojs(Db);
+		// Записываем в свойство db объект соединения в БД
+		driver.db = mongojs(DB_PATH);
 		driver.ObjectId = driver.db.ObjectId;
 
 		//Проверяем все ли нужные таблицы созданы

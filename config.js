@@ -16,6 +16,6 @@ module.exports = {
      */
     mongodb: {
         host: "localhost:27017",
-        db: "singreeFirst"
+        db: "rssChannels"
     }
 };
